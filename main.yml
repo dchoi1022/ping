@@ -1,0 +1,8 @@
+---
+- name: ping
+  hosts: "{{ awx_target_hosts | default('none') }}"
+  gather_facts: no
+
+  roles:
+    - { role: "{{ playbook_dir }}" }
+    
