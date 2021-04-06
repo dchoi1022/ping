@@ -1,4 +1,9 @@
 ---
 - name: ping test
   ping:
-  
+    data: "pinged node: {{ inventory_hostname }}"
+  register: output
+
+- name: debug module
+  debug:
+    var: output.ping
